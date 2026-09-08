@@ -20,7 +20,6 @@ El sitio objetivo para estas pruebas es la plataforma interactiva [Automation Te
 * **Framework de Automation:** Playwright Test
 * **Patrón de Diseño:** Page Object Model (POM)
 * **Reportes:** Playwright HTML Report / Allure Report
-* **CI/CD:** GitHub Actions (configurado bajo `.github/`)
 
 ---
 
@@ -48,6 +47,8 @@ La suite `Test Automation Practica - Test Aislados` contempla **18 escenarios in
 18. **Contador de visualizaciones en tiempo real:** Validación de incrementos dinámicos en contadores de visitas.
 
 ---
+
+## 🏗️ Estructura del Proyecto
 
 ```text
 AutomationTestingPractice/
