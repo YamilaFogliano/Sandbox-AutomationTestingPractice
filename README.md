@@ -9,8 +9,8 @@ El sitio objetivo para estas pruebas es la plataforma interactiva [Automation Te
 ## 🎯 Objetivos del Proyecto
 
 * **Testing Aislado & Atómico:** Ejecución de pruebas independientes dentro de una única suite estructurada mediante `test.describe`, asegurando dinamismo y fácil mantenimiento.
-* **Dominio de Interacciones complejas de UI:** Manipulación de controles de formulario, tablas dinámicas/estáticas, alertas JS, iFrames, Shadow DOM, drag and drop y eventos de ratón.
-* **Patrón Page Object Model (POM):** Abstracción de selectores y acciones clave dentro de la carpeta `pages/` para mantener un código limpio y reutilizable.
+* **Dominio de Interacciones complejas de UI:** Manipulación de controles de formulario, tablas dinámicas y estáticas, alertas JS, iFrames, Shadow DOM, drag and drop, slider y eventos de ratón.
+* **Patrón Page Object Model (POM):** Abstracción de selectores y acciones clave dentro de la carpeta `pages/` para mantener un código limpio, legible y reusable.
 
 ---
 
@@ -25,26 +25,28 @@ El sitio objetivo para estas pruebas es la plataforma interactiva [Automation Te
 
 ## 🧩 Cobertura de Pruebas (`01-Sandbox-Playwright.spec.ts`)
 
-La suite `Test Automation Practica - Test Aislados` contempla **18 escenarios independientes**:
+La suite contemplada en `01-Sandbox-Playwright.spec.ts` integra **20 escenarios de prueba independientes**:
 
-1. **Reconocimiento de página web y Data Entry Form:** Validación inicial de URL/título, formularios de texto, radio buttons de género, checkboxes de días, menus desplegables (países, colores, animales) y datepickers (calendario y barra).
-2. **Carga de archivos:** Subida individual y múltiple de archivos.
-3. **Extracción de datos en tabla estática (Libros):** Lectura de filas (título, autor, tema, precio) y cálculo del costo total acumulado.
-4. **Extracción de datos en tabla estática (Recursos):** Captura de métricas (Mbps, CPU, Memoria, Disco) y suma matemática de cada elemento.
-5. **Paginación de tabla web:** Lectura de IDs, nombres, precios y checkboxes a través de todas las páginas de la tabla.
-6. **ShadowDOM:** Interacción con elementos encapsulados dentro del DOM oculto.
-7. **Validación de enlaces (Misma página):** Verificación de navegación interna y retroceso con `page.goBack()`.
-8. **Validación de enlaces (Página externa):** Manejo de nuevas pestañas/ventanas y cierre controlado.
-9. **Búsqueda por barra de Wikipedia:** Validación de input de búsqueda, botones y enlaces con redirección a información exacta.
-10. **Validación de botón dinámico:** Verificación de cambios de estado visuales y propiedades de elementos SVG.
-11. **Alertas y PopUps:** Manejo de alertas simples, de confirmación, prompts, pestañas nuevas y ventanas emergentes.
-12. **Validación de Mouse Hover:** Despliegue de submenús mediante interacción de desplazamiento del ratón (`hover`).
-13. **Validación de Doble Click:** Copiado dinámico de valores entre campos de texto activado por evento de doble clic.
-14. **Drag and Drop:** Arrastre de elementos interactivos y aserción de indicadores/mensajes de éxito.
-15. **Barra Slider:** Ajuste y simulación de rangos de precio deslizando controles continuos.
-16. **Scrolling Dropdown:** Navegación por listas extensas mediante desplazamiento vertical.
-17. **Validación de etiquetas y enlaces:** Aserción de tags, hipervínculos válidos y manejo de respuestas HTTP de error.
-18. **Contador de visualizaciones en tiempo real:** Validación de incrementos dinámicos en contadores de visitas.
+1. **Reconocimiento de enlaces del menú superior (Header):** Validación de visibilidad de enlaces principales (*Home, Udemy Courses, Online Trainings, Blog, PlaywrightPractice*).
+2. **Llenar y validar datos del formulario principal:** Entrada de datos en inputs de texto, radio buttons de género, checkboxes de días y selectores múltiples (*países, colores, animales*).
+3. **Ingresar fechas en los 3 Date Pickers:** Manipulación de inputs de tipo texto directo, campos con restricción `readonly` y selectores de fecha nativos en formato ISO (`YYYY-MM-DD`).
+4. **Carga de archivos (File Upload):** Subida de archivo único y carga múltiple simultánea utilizando buffers de memoria.
+5. **Validar contenido de la tabla estática de libros:** Inspección de filas, estructura de celdas y validación de texto de títulos (*Learn Selenium*).
+6. **Verificar valores de la tabla dinámica:** Confirmación de carga e integridad de filas en tablas con contenido dinámico.
+7. **Navegar por paginación de productos:** Interacción con el paginador numérico y aserción de elementos renderizados en la nueva página.
+8. **Realizar búsqueda en el widget de Wikipedia:** Envío de términos en la barra de búsqueda y aserción de lista de resultados generada.
+9. **Interactuar con botón dinámico (START/STOP):** Control de presencia y cambio de estados/textos tras la interacción del usuario.
+10. **Probar alertas nativas de JavaScript:** Captura y respuesta automatizada ante diálogos de tipo *Alert, Confirm* y *Prompt*.
+11. **Abrir nueva pestaña mediante botón New Tab:** Control de eventos multiventana (`context.waitForEvent('page')`) y cierre controlado de la pestaña secundaria.
+12. **Desplegar menú flotante con Mouse Hover:** Simulación de movimiento del ratón sobre elementos gatillo para la visualización de submenús flotantes.
+13. **Copiar texto con Doble Clic:** Copiado dinámico de información entre campos activado por el evento `dblclick()`.
+14. **Arrastrar y soltar elementos (Drag and Drop):** Arrastre de elementos gráficos hacia zonas objetivo con validación de actualización del DOM.
+15. **Mover la barra deslizante (Slider):** Control de enfoque y desplazamiento incremental mediante interacción por teclado (`ArrowRight`).
+16. **Validar presencia de elementos SVG y Scrolling DropDown:** Conteo/aserción de íconos vectoriales SVG en pantalla y menú desplegable deslizable.
+17. **Verificar respuestas de enlaces con error (Broken Links):** Peticiones HTTP independientes (`request.get`) para validar respuestas con códigos de error (>= 400).
+18. **Llenar inputs de las secciones 1, 2 y 3 del formulario:** Validación masiva de campos secundarias distribuidos por secciones.
+19. **Interacción con elementos dentro del Shadow DOM:** Acceso y manipulación directa de inputs y checkboxes encapsulados en un Shadow Host.
+20. **Validar contador de visitas y enlaces del Footer:** Aserción de presencia del contador dinámico de visitantes y links adicionales del pie de página.
 
 ---
 
@@ -52,12 +54,12 @@ La suite `Test Automation Practica - Test Aislados` contempla **18 escenarios in
 
 ```text
 AutomationTestingPractice/
-├── .github/                           # Workflows y configuraciones de CI/CD               
-├── pages/                             # Page Object Models (POM)
-├── playwright-report/                 # Reportes HTML nativos de Playwright
-├── test-results/                      # Capturas, videos y trazas de ejecución
+├── .github/                # Workflows y configuraciones de CI/CD               
+├── pages/                  # Page Object Models (POM) - AutomationPracticePage.ts
+├── playwright-report/      # Reportes HTML nativos de Playwright
+├── test-results/           # Capturas, videos y trazas de ejecución
 ├── tests/
-│   └── 01-Sandbox-Playwright.spec.ts  # Suite unificada con los 18 tests aislados
+│   └── 01-Sandbox-Playwright.spec.ts  # Suite unificada con los 20 tests aislados
 ├── package.json
 ├── package-lock.json
 ├── playwright.config.ts
