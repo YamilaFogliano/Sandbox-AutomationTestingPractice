@@ -46,8 +46,8 @@ test.describe('Suite Completa de Pruebas Funcionales - Automation Practice', () 
     await practicePage.colorsSelect.selectOption(['red', 'blue']);
     await expect(practicePage.colorsSelect).toHaveValues(['red', 'blue']);
 
-    await practicePage.sortedListSelect.selectOption('Fox');
-    await expect(practicePage.sortedListSelect).toHaveValue('Fox');
+    await practicePage.sortedListSelect.selectOption('fox');
+    await expect(practicePage.sortedListSelect).toHaveValue('fox');
   });
 
   test('03. Ingresar fechas en los 3 Date Pickers', async () => {

@@ -54,12 +54,12 @@ La suite contemplada en `01-Sandbox-Playwright.spec.ts` integra **20 escenarios 
 
 ```text
 AutomationTestingPractice/
-├── .github/                # Workflows y configuraciones de CI/CD               
-├── pages/                  # Page Object Models (POM) - AutomationPracticePage.ts
-├── playwright-report/      # Reportes HTML nativos de Playwright
-├── test-results/           # Capturas, videos y trazas de ejecución
+├── .github/                              # Workflows y configuraciones de CI/CD               
+├── pages/                                # Page Object Models (POM) - AutomationPracticePage.ts
+├── playwright-report/                    # Reportes HTML nativos de Playwright
+├── test-results/                         # Capturas, videos y trazas de ejecución
 ├── tests/
-│   └── 01-Sandbox-Playwright.spec.ts  # Suite unificada con los 20 tests aislados
+│   └── 01-Sandbox-Playwright.spec.ts     # Suite unificada con los 20 tests aislados
 ├── package.json
 ├── package-lock.json
 ├── playwright.config.ts
