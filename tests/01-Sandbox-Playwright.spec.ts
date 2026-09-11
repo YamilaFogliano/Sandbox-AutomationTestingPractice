@@ -52,6 +52,7 @@ test.describe('Suite Completa de Pruebas Funcionales - Automation Practice', () 
 
   test('03. Ingresar fechas en los 3 Date Pickers', async () => {
     // Date Picker 1
+    await practicePage.datePicker1Input.waitFor({ state: 'visible' });
     await practicePage.datePicker1Input.fill('05/20/2026');
     await expect(practicePage.datePicker1Input).toHaveValue('05/20/2026');
 
@@ -69,6 +70,7 @@ test.describe('Suite Completa de Pruebas Funcionales - Automation Practice', () 
 
   test('04. Carga de archivo individual y múltiple', async () => {
     //  Subir archivo único
+    await practicePage.singleFileInput.waitFor({ state: 'attached' });
     await practicePage.singleFileInput.setInputFiles({
       name: 'archivo_prueba.pdf',
       mimeType: 'application/pdf',

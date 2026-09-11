@@ -150,6 +150,6 @@ export class AutomationPracticePage {
     }
 
     async navigateTo() {
-        await this.page.goto('https://testautomationpractice.blogspot.com/', { waitUntil: 'domcontentloaded' });
+        await this.page.goto('https://testautomationpractice.blogspot.com/', { waitUntil: 'commit' });
     }
 }
